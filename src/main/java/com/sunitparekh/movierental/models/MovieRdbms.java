@@ -1,7 +1,7 @@
 package com.sunitparekh.movierental.models;
 
 import javax.persistence.*;
-import java.sql.Timestamp;
+import java.time.LocalDate;
 
 @Entity
 @Table(name="MOVIES")
@@ -14,14 +14,14 @@ public class MovieRdbms {
     @Column(name="MOVIE_NAME")
     private String name;
 
-    @Column(name="RELEASE_DATE", columnDefinition = "DATE")
-    private Timestamp releaseDate;
+    @Column(name="RELEASE_DATE")
+    private LocalDate releaseDate;
 
     public MovieRdbms(){
 
     }
 
-    public MovieRdbms(String name, Timestamp releaseDate){
+    public MovieRdbms(String name, LocalDate releaseDate){
         this.name = name;
         this.releaseDate = releaseDate;
     }
@@ -30,7 +30,7 @@ public class MovieRdbms {
         return name;
     }
 
-    public Timestamp getReleaseDate(){
+    public LocalDate getReleaseDate(){
         return releaseDate;
     }
 
